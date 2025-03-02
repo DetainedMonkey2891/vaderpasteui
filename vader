@@ -4682,7 +4682,7 @@ end
                     Name = "",
                     PaddingBottom = UDim.new(0, 1),
                     PaddingLeft = UDim.new(0, 5)
-                })
+                })--]]
                 
                 local always = library:create("TextButton", {
                     Parent = options,
@@ -4712,7 +4712,7 @@ end
                     Parent = options,
                     Name = "",
                     PaddingBottom = UDim.new(0, 4)
-                })--]]
+                })
             --  
 
             function cfg.set_visible(bool)
