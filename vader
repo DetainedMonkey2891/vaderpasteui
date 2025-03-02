@@ -4644,7 +4644,7 @@ end
                     TextColor3 = Color3.fromRGB(170, 170, 170),
                     BorderColor3 = Color3.fromRGB(56, 56, 56),
                     Text = "press",
-                    Size = UDim2.new(0, 0, 0, 0),
+                    Size = UDim2.new(1, 0, 0, 12),
                     BackgroundTransparency = 1,
                     TextXAlignment = Enum.TextXAlignment.Left,
                     Position = UDim2.new(0, 2, 0, 2),
@@ -4660,7 +4660,7 @@ end
                     PaddingLeft = UDim.new(0, 5)
                 })
                 
-                local hold = library:create("TextButton", {
+                --[[local hold = library:create("TextButton", {
                     Parent = options,
                     Name = "",
                     FontFace = library.font,
@@ -4668,7 +4668,7 @@ end
                     BorderColor3 = Color3.fromRGB(56, 56, 56),
                     Text = "hold",
                     TextStrokeTransparency = 0.5,
-                    Size = UDim2.new(0, 0, 0, 0),
+                    Size = UDim2.new(1, 0, 0, 12),
                     BackgroundTransparency = 1,
                     TextXAlignment = Enum.TextXAlignment.Left,
                     Position = UDim2.new(0, 2, 0, 2),
@@ -4683,7 +4683,7 @@ end
                     PaddingBottom = UDim.new(0, 1),
                     PaddingLeft = UDim.new(0, 5)
                 })
-            
+                
                 local always = library:create("TextButton", {
                     Parent = options,
                     Name = "",
@@ -4706,7 +4706,7 @@ end
                     Name = "",
                     PaddingBottom = UDim.new(0, 1),
                     PaddingLeft = UDim.new(0, 5)
-                })
+                })--]]
                 
                 local UIPadding = library:create("UIPadding", {
                     Parent = options,
@@ -4830,16 +4830,43 @@ end
                 end 
             end
 
-            local selected; 
+            local selected = "press"
 
-            always.MouseButton1Click:Connect(function()
+            --[[hold.MouseButton1Click:Connect(function()
+                if selected then 
+                    selected.BackgroundTransparency = 1
+                end 
+                selected = "hold"
+                hold.BackgroundTransparency = 0 
+
+                cfg.set_mode("hold") 
+                cfg.set_visible(false)
+                cfg.open = false 
+            end)--]]
+
+            press.MouseButton1Click:Connect(function()
+                if selected then 
+                    selected.BackgroundTransparency = 1
+                end 
+                selected = "press"
+                press.BackgroundTransparency = 0 
+
+                cfg.set_mode("toggle") 
+                cfg.set_visible(false)
+                cfg.open = false 
+            end) 
+
+           --[[ always.MouseButton1Click:Connect(function()
+                if selected then 
+                    selected.BackgroundTransparency = 1
+                end 
                 selected = "always"
                 
                 always.BackgroundTransparency = 0 
                 cfg.set_mode("always") 
                 cfg.set_visible(false)
                 cfg.open = false 
-            end) 
+            end) --]]
 
             keybind.MouseButton2Click:Connect(function()
                 cfg.open = not cfg.open 
