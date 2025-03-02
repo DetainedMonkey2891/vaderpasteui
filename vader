@@ -4637,7 +4637,7 @@ end
                     SortOrder = Enum.SortOrder.LayoutOrder
                 })
                 
-                local press = library:create("TextButton", {
+                --[[local press = library:create("TextButton", {
                     Parent = options,
                     Name = "",
                     FontFace = library.font,
@@ -4682,7 +4682,7 @@ end
                     Name = "",
                     PaddingBottom = UDim.new(0, 1),
                     PaddingLeft = UDim.new(0, 5)
-                })
+                })--]]
                 
                 local always = library:create("TextButton", {
                     Parent = options,
