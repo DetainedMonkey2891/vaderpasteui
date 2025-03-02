@@ -4832,34 +4832,7 @@ end
 
             local selected; 
 
-            hold.MouseButton1Click:Connect(function()
-                if selected then 
-                    selected.BackgroundTransparency = 1
-                end 
-                selected = "hold"
-                hold.BackgroundTransparency = 0 
-
-                cfg.set_mode("hold") 
-                cfg.set_visible(false)
-                cfg.open = false 
-            end) 
-
-            press.MouseButton1Click:Connect(function()
-                if selected then 
-                    selected.BackgroundTransparency = 1
-                end 
-                selected = "press"
-                press.BackgroundTransparency = 0 
-
-                cfg.set_mode("toggle") 
-                cfg.set_visible(false)
-                cfg.open = false 
-            end) 
-
             always.MouseButton1Click:Connect(function()
-                if selected then 
-                    --selected.BackgroundTransparency = 1
-                end 
                 selected = "always"
                 
                 always.BackgroundTransparency = 0 
