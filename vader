@@ -56,7 +56,7 @@ end
         keybind_path; 
         panel_open = false, 
 
-        directory = "inactivity",
+        directory = "Atlas",
         folders = {
             "/fonts",
             "/configs"
@@ -4660,7 +4660,7 @@ end
                     PaddingLeft = UDim.new(0, 5)
                 })
                 
-                --[[local hold = library:create("TextButton", {
+                local hold = library:create("TextButton", {
                     Parent = options,
                     Name = "",
                     FontFace = library.font,
@@ -4706,7 +4706,7 @@ end
                     Name = "",
                     PaddingBottom = UDim.new(0, 1),
                     PaddingLeft = UDim.new(0, 5)
-                })--]]
+                })
                 
                 local UIPadding = library:create("UIPadding", {
                     Parent = options,
@@ -4830,9 +4830,9 @@ end
                 end 
             end
 
-            local selected = "press"
+            local selected; 
 
-            --[[hold.MouseButton1Click:Connect(function()
+            hold.MouseButton1Click:Connect(function()
                 if selected then 
                     selected.BackgroundTransparency = 1
                 end 
@@ -4842,7 +4842,7 @@ end
                 cfg.set_mode("hold") 
                 cfg.set_visible(false)
                 cfg.open = false 
-            end)--]]
+            end) 
 
             press.MouseButton1Click:Connect(function()
                 if selected then 
@@ -4856,7 +4856,7 @@ end
                 cfg.open = false 
             end) 
 
-           --[[ always.MouseButton1Click:Connect(function()
+            always.MouseButton1Click:Connect(function()
                 if selected then 
                     selected.BackgroundTransparency = 1
                 end 
@@ -4866,7 +4866,7 @@ end
                 cfg.set_mode("always") 
                 cfg.set_visible(false)
                 cfg.open = false 
-            end) --]]
+            end) 
 
             keybind.MouseButton2Click:Connect(function()
                 cfg.open = not cfg.open 
