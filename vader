@@ -196,7 +196,7 @@ local abs = math.abs
             return camera:WorldToViewportPoint(position)
         end 	
 
-        function library:unload()
+       --[[ function library:unload()
             library.gui:Destroy() 
 
             for _, connection in library.connections do 
@@ -208,7 +208,7 @@ local abs = math.abs
             end 
 
             getgenv().library = nil
-        end
+        end--]]
 
         function library:convert_string_rgb(str)
             local values = {}
